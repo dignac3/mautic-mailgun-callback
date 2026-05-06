@@ -106,6 +106,5 @@ bin/phpunit plugins/MauticMailgunCallbackBundle/Tests --testdox
 ---
 
 ## License
-
-MIT
+GPL 3.0
 
