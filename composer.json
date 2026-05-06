@@ -1,5 +1,5 @@
 {
-    "name": "mautic/mautic-mailgun-callback-bundle",
+    "name": "dignac3/mautic-mailgun-callback-bundle",
     "description": "Mailgun callback handler for Mautic 7: processes bounces, spam complaints and unsubscribes into Mautic DNC.",
     "type": "mautic-plugin",
     "keywords": [

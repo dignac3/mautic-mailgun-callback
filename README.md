@@ -1,21 +1,8 @@
 # MauticMailgunCallbackBundle
 
-Mailgun callback handler plugin for **Mautic 7**.
+Mailgun callback handler plugin tested on **Mautic 7**.
 
 Processes Mailgun webhook events (bounces, spam complaints, unsubscribes) and updates Mautic DNC (Do Not Contact) lists automatically.
-
----
-
-## Features
-
-- ✅ Hard bounce (`failed/permanent`) → DNC BOUNCED
-- ✅ Spam complaint (`complained`) → DNC UNSUBSCRIBED
-- ✅ Unsubscribe (`unsubscribed`) → DNC UNSUBSCRIBED
-- ✅ Soft bounces (`failed/temporary`) → **ignored** (Mailgun retries automatically)
-- ✅ Other events (`delivered`, `opened`, `clicked`) → **ignored** (handled by Mautic native tracking)
-- ✅ HMAC-SHA256 signature validation on every request
-- ✅ Hash-ID lookup when available (preserves Mautic email stat accuracy)
-- ✅ No extra Composer dependencies (uses Mautic 7 core only)
 
 ---
 
@@ -60,16 +47,17 @@ https://your-mautic.example.com/mailer/callback
 ```
 
 Enable the following event types:
-- `failed` (permanent bounces)
-- `complained` (spam complaints)
-- `unsubscribed` (Mailgun unsubscribes)
+- Permanent failure (`failed`)
+- Temporary failure (`failed`)
+- Spam complaints (`complained`)
+- Unsubscribes (`unsubscribed`)
 
 ### 3. Sending configuration (no plugin required)
 
 Sending via Mailgun uses native Mautic/Symfony support. Just set your DSN:
 
 ```bash
-# API (recommended — fastest)
+# API (recommended — fastest) but need the symfony/mailgun-mailer package installed
 MAUTIC_MAILER_DSN=mailgun+api://SENDING_KEY:DOMAIN@default?region=eu
 
 # HTTP
