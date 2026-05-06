@@ -1,0 +1,26 @@
+{
+    "name": "mautic/mautic-mailgun-callback-bundle",
+    "description": "Mailgun callback handler for Mautic 7: processes bounces, spam complaints and unsubscribes into Mautic DNC.",
+    "type": "mautic-plugin",
+    "keywords": [
+        "mautic",
+        "plugin",
+        "mailgun",
+        "webhook",
+        "email",
+        "bounce",
+        "dnc"
+    ],
+    "license": "MIT",
+    "extra": {
+        "install-directory-name": "MauticMailgunCallbackBundle"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "mautic/core-lib": "^7.0"
+    },
+    "suggest": {
+        "symfony/mailgun-mailer": "Required for sending via Mailgun DSN (mailgun+api/https/smtp)."
+    }
+}
+
